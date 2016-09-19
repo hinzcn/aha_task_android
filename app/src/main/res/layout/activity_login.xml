@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroud"
+    android:weightSum="5"
+    android:orientation="vertical"
+    tools:context="com.dajunzai.android.ahatask.view.LoginActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"></LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp">
+    <EditText
+        android:gravity="center_vertical"
+        android:padding="@dimen/x5"
+        android:drawablePadding="@dimen/x5"
+        android:background="@drawable/shape_backgroud"
+        android:drawableLeft="@drawable/un_selector"
+        android:hint="请输入用户名"
+        android:id="@+id/et_login_username"
+        android:layout_alignParentTop="true"
+        android:elevation="2dip"
+        android:layout_centerHorizontal="true"
+        android:layout_width="@dimen/x250"
+        android:layout_height="@dimen/y50" />
+    <EditText
+        android:gravity="center_vertical"
+
+        android:layout_marginTop="5dp"
+        android:elevation="2dip"
+        android:padding="@dimen/x5"
+        android:drawablePadding="@dimen/x5"
+        android:outlineProvider="background"
+        android:background="@drawable/shape_backgroud"
+        android:drawableLeft="@drawable/pw_selector"
+        android:layout_centerHorizontal="true"
+        android:hint="请输入密码"
+        android:id="@+id/et_login_password"
+        android:layout_below="@id/et_login_username"
+        android:layout_width="@dimen/x250"
+        android:layout_height="@dimen/y50" />
+    <LinearLayout
+        android:layout_below="@id/et_login_password"
+        android:layout_width="match_parent"
+        android:weightSum="5"
+        android:gravity="center"
+        android:layout_height="@dimen/y50">
+        <Button
+            style="?android:attr/borderlessButtonStyle"
+        android:text="确定"
+        android:layout_weight="1"
+        android:id="@+id/btn_login_submit"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/y50" />
+        <Button
+
+            style="?android:attr/borderlessButtonStyle"
+        android:layout_weight="1"
+            android:text="注册模式"
+            android:id="@+id/btn_login_regist"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/y50" />
+    </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

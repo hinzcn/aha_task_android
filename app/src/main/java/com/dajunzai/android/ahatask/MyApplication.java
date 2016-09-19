@@ -2,10 +2,10 @@ package com.dajunzai.android.ahatask;
 
 import android.app.Application;
 
-import com.dajunzai.android.ahatask.utils.URLUtil;
+import com.dajunzai.android.ahatask.constant.CommonConstant;
 
-import retrofit.GsonConverterFactory;
-import retrofit.Retrofit;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * Created by Administrator on 2016/9/19.
@@ -21,7 +21,7 @@ public class MyApplication extends Application {
         if(retrofit==null){
              retrofit = new Retrofit.Builder()
                      .addConverterFactory(GsonConverterFactory.create())
-                    .baseUrl(URLUtil.baseUrl)
+                    .baseUrl(CommonConstant.BASEURL)
                     .build();
         }
         return retrofit;

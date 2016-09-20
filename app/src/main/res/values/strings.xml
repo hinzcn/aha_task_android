@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">AhaTask</string>
+    <string name="main_bg_home">主页</string>
+    <string name="main_sbg_mine">我的</string>
+    <string name="main_bg_task">任务</string>
+    <string name="main_bg_coin">奖项</string>
 </resources>

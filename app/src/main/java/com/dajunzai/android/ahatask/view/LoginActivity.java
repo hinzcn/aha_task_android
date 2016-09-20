@@ -7,7 +7,11 @@ import android.widget.EditText;
 import com.dajunzai.android.ahatask.R;
 import com.dajunzai.android.ahatask.persenter.Login_Persenter;
 import com.dajunzai.android.ahatask.view.base.BaseActivity;
-
+/**
+ * Created by Hinzcn on 2016/9/19.
+ * auther:caoyue
+ * mail:hinzcn@gmail.com
+ */
 
 public class LoginActivity extends BaseActivity  {
     private EditText et_login_username;

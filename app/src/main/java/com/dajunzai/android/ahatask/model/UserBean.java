@@ -1,7 +1,9 @@
 package com.dajunzai.android.ahatask.model;
 
 /**
- * Created by Administrator on 2016/9/19.
+ * Created by Hinzcn on 2016/9/19.
+ * auther:caoyue
+ * mail:hinzcn@gmail.com
  */
 public class UserBean {
 

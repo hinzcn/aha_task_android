@@ -4,7 +4,9 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 /**
- * Created by Administrator on 2016/9/19.
+ * Created by Hinzcn on 2016/9/19.
+ * auther:caoyue
+ * mail:hinzcn@gmail.com
  */
 public class CommonBean {
     @Expose

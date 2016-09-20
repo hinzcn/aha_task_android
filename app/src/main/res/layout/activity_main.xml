@@ -4,45 +4,59 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="10"
-
     android:orientation="vertical">
-    <android.support.v4.view.ViewPager
+    <FrameLayout
+        android:id="@+id/fl_main_content"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="9">
-    </android.support.v4.view.ViewPager>
+    </FrameLayout>
     <RadioGroup
+        android:padding="5dp"
+        android:id="@+id/rg_main_controll"
+        android:background="@color/bottom_blue_rg"
         android:layout_weight="1"
+        android:gravity="center"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="0dp">
         <RadioButton
+            android:drawableTop="@drawable/wr_selector"
             android:gravity="center"
             android:button="@android:color/transparent"
-            android:text="主页"
+            android:text="@string/main_bg_home"
+            android:textColor="@drawable/bgtextcolor_selector"
         android:id="@+id/rb_rg_home"
         android:layout_width="0dp"
         android:layout_weight="1"
         android:layout_height="match_parent" />
         <RadioButton
+            android:drawableTop="@drawable/star_selector"
             android:gravity="center"
             android:button="@android:color/transparent"
-            android:text="rg"
-            android:id="@+id/rb_rg_"
+            android:text="@string/main_bg_task"
+            android:id="@+id/rb_rg_task"
             android:layout_weight="1"
+            android:textColor="@drawable/bgtextcolor_selector"
             android:layout_width="0dp"
             android:layout_height="match_parent" />
         <RadioButton
+            android:drawableTop="@drawable/doc_selector"
             android:gravity="center"
             android:button="@android:color/transparent"
-            android:text="rg"
+            android:text="@string/main_bg_coin"
             android:layout_weight="1"
+            android:id="@+id/rb_rg_coin"
+            android:textColor="@drawable/bgtextcolor_selector"
             android:layout_width="0dp"
             android:layout_height="match_parent" />
         <RadioButton
+            android:drawableTop="@drawable/option_selector"
             android:gravity="center"
             android:button="@android:color/transparent"
-            android:text="rg"
+            android:text="@string/main_sbg_mine"
+            android:id="@+id/rb_rg_mine"
+            android:textColor="@drawable/bgtextcolor_selector"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="match_parent" />

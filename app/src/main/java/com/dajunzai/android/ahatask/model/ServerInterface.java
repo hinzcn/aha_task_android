@@ -9,7 +9,9 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.POST;
 
 /**
- * Created by Administrator on 2016/9/19.
+ * Created by Hinzcn on 2016/9/20.
+ * auther:caoyue
+ * mail:hinzcn@gmail.com
  */
 public interface ServerInterface {
     //

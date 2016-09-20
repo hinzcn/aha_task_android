@@ -36,10 +36,8 @@ public class Login_Persenter implements View.OnClickListener{
                 mHttpClient.userRegister(mLoginActivity.getEt_login_username().getText().toString().trim(),
                         mLoginActivity.getEt_login_password().getText().toString() );
                 break;
-
         }
     }
-
     private boolean checkInPut() {
         boolean result = false;
         String userName = mLoginActivity.getEt_login_username().getText().toString();

@@ -1,8 +1,11 @@
 package com.dajunzai.android.ahatask.model;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 
+import com.dajunzai.android.ahatask.MainActivity;
 import com.dajunzai.android.ahatask.utils.CommonBean;
 import com.dajunzai.android.ahatask.utils.CommonRequestFactory;
 import com.dajunzai.android.ahatask.utils.Utils;
@@ -18,7 +21,6 @@ import retrofit2.Response;
  */
 public class CommonHttpClient {
     private  Context mContext;
-
     public CommonHttpClient(Context mContext) {
         this.mContext =mContext;
     }
@@ -52,7 +54,7 @@ public class CommonHttpClient {
 
     public void userLogin(String username, String userpwd) {
         ServerInterface serverInterface = CommonRequestFactory.buildRetrofit().createServerInterface();
-        Call<CommonBean> login = serverInterface.regist(username, userpwd);
+        Call<CommonBean> login = serverInterface.login(username, userpwd);
 
         login.enqueue(new Callback<CommonBean>() {
             @Override
@@ -61,7 +63,9 @@ public class CommonHttpClient {
                 if (cb != null) {
                     if (cb.isRe()) {
                         Utils.showToast(mContext,cb.getMessage());
-
+                        Intent intent = new Intent(mContext, MainActivity.class);
+                        mContext.startActivity(intent);
+                        ((Activity)mContext).finish();
                     } else {
                        Utils.showToast(mContext,cb.getMessage());
                     }

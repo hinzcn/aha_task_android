@@ -4,4 +4,8 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="bottom_blue_rg">#2196F3</color>
+    <!--#FF5722-->
+    <color name="radioButton_Color">#FF5722</color>
+    <color name="radioGroup_Color">#757575</color>
+    <color name="radioGroup_bg">#BDBDBD</color>
 </resources>

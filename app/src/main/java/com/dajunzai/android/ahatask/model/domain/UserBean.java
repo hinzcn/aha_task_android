@@ -1,4 +1,4 @@
-package com.dajunzai.android.ahatask.model;
+package com.dajunzai.android.ahatask.model.domain;
 
 /**
  * Created by Hinzcn on 2016/9/19.

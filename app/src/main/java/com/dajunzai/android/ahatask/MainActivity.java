@@ -1,11 +1,9 @@
 package com.dajunzai.android.ahatask;
 
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Window;
-import android.widget.FrameLayout;
 import android.widget.RadioGroup;
 
 import com.dajunzai.android.ahatask.fragment.BaseFragment;
@@ -71,6 +69,18 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
                 break;
         }
         changeFragment();
+        changeColor();
+    }
+
+    private void changeColor() {
+
+        for (int i = 0; i < rg_main_controll.getChildCount(); i++) {
+            if (i == position) {
+                rg_main_controll.getChildAt(position).setBackgroundColor(getResources().getColor(R.color.radioButton_Color));
+            } else {
+                rg_main_controll.getChildAt(i).setBackgroundColor(getResources().getColor(R.color.radioGroup_bg));
+            }
+        }
     }
 
     private void changeFragment() {

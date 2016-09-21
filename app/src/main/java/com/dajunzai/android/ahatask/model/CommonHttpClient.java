@@ -4,15 +4,21 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
+import android.widget.Adapter;
 
 import com.dajunzai.android.ahatask.MainActivity;
 import com.dajunzai.android.ahatask.MyApplication;
 import com.dajunzai.android.ahatask.constant.CommonConstant;
 import com.dajunzai.android.ahatask.model.domain.TaskListBean;
+import com.dajunzai.android.ahatask.model.messagebean.AnyEventType;
 import com.dajunzai.android.ahatask.utils.CommonBean;
 import com.dajunzai.android.ahatask.utils.CommonRequestFactory;
 import com.dajunzai.android.ahatask.utils.Utils;
+import com.joanzapata.android.QuickAdapter;
 
+import org.greenrobot.eventbus.EventBus;
+
+import java.util.List;
 import java.util.Map;
 
 import retrofit2.Call;
@@ -100,7 +106,7 @@ public class CommonHttpClient {
      * 获取用户的任务列表
      * @param username
      */
-    public static void toGetTaskList(String username){
+    public static void toGetTaskList(String username, final QuickAdapter adapter){
         ServerInterface serverInterface = CommonRequestFactory.buildRetrofit().createServerInterface();
         Call<TaskListBean> taskList = serverInterface.getTaskList(username);
         taskList.enqueue(new Callback<TaskListBean>() {
@@ -110,6 +116,12 @@ public class CommonHttpClient {
                 if(body!=null) {
                     if(body.isReturnX()) {
                         Log.e("TAG","message----"+body.toString());
+                        List<TaskListBean.DatalistBean> datalist = body.getDatalist();
+                            adapter.addAll(datalist);
+                            EventBus.getDefault().post(new AnyEventType(adapter));
+
+                    }else{
+
                     }
                 }
             }
@@ -125,7 +137,7 @@ public class CommonHttpClient {
      * 创建任务
      * @param requestMap
      */
-    public void addTask(Map<String, String> requestMap) {
+    public static void addTask(Map<String, String> requestMap) {
         Call<String> stringCall = CommonRequestFactory.buildRetrofit().createServerInterface().addTask(requestMap);
         stringCall.enqueue(new Callback<String>() {
             @Override
